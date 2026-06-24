@@ -1,0 +1,256 @@
+/* --- BRUTALIST & BOXY DESIGN SCHEME --- */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #1a1a1a;
+    --border-color: #000000;
+    --accent-color: #e0e0e0;
+    --sidebar-width: 260px;
+    --border-thick: 3px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    border-radius: 0 !important; /* Forces strict box shapes everywhere */
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+}
+
+/* --- SIDEBAR NAV --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: var(--border-thick) solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.nav-header {
+    padding: 20px;
+    font-weight: bold;
+    background-color: var(--border-color);
+    color: #ffffff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+    overflow-y: auto;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar li a:hover,
+.sidebar li a.active {
+    background-color: var(--border-color);
+    color: #ffffff;
+}
+
+/* --- MAIN DOCUMENT SYSTEM --- */
+.document-container {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 40px;
+    max-width: 1000px;
+}
+
+/* Individual Pages */
+.page {
+    min-height: 90vh;
+    padding: 60px 0;
+    border-bottom: var(--border-thick) dashed var(--border-color);
+    position: relative;
+}
+
+.page:last-child {
+    border-bottom: none;
+}
+
+.page-number {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    padding: 4px 8px;
+    background-color: #ffffff;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Typography */
+h1.main-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: var(--border-thick) solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* --- REUSABLE BOXY CARDS --- */
+.boxy-card {
+    background: #ffffff;
+    border: var(--border-thick) solid var(--border-color);
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 6px 6px 0px var(--border-color); /* Flat Hard Shadow instead of Blur */
+}
+
+.hero-card {
+    text-align: center;
+    width: 100%;
+    padding: 50px 30px;
+}
+
+.horizontal-line {
+    height: var(--border-thick);
+    background-color: var(--border-color);
+    margin: 20px 0;
+}
+
+.status-tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border: 2px solid var(--border-color);
+}
+
+/* Layout Utilities */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Tech Tags */
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tech-tag {
+    background-color: #ffffff;
+    border: 2px solid var(--border-color);
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Tables */
+.boxy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.boxy-table th, .boxy-table td {
+    border: 2px solid var(--border-color);
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.boxy-table th {
+    background-color: var(--accent-color);
+}
+
+.nested-box {
+    border-left: 5px solid var(--border-color);
+    background-color: var(--bg-color);
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+
+/* --- CERTIFICATION PAGE TARGET --- */
+.cert-card {
+    background: #ffffff;
+}
+
+.cert-image-placeholder {
+    width: 100%;
+    min-height: 350px;
+    border: 2px dashed var(--border-color);
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: var(--border-thick) solid var(--border-color);
+    }
+    .document-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
