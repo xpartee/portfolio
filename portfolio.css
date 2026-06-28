@@ -109,7 +109,7 @@ body {
 
 /* Typography */
 h1.main-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     line-height: 1.1;
     margin-bottom: 10px;
 }
@@ -213,24 +213,68 @@ p {
     margin: 15px 0;
 }
 
-/* --- CERTIFICATION PAGE TARGET --- */
-.cert-card {
-    background: #ffffff;
+/* --- NEW COMPONENT SPECIFICS --- */
+
+/* Hero Profile Image Setup */
+.profile-img-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-.cert-image-placeholder {
-    width: 100%;
-    min-height: 350px;
-    border: 2px dashed var(--border-color);
-    background-color: var(--bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
-    padding: 20px;
-    text-align: center;
+.portfolio-avatar {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border: var(--border-thick) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+/* Project Links Style */
+.project-link {
+    color: var(--text-color);
     font-weight: bold;
-    color: #555;
+    text-decoration: none;
+    border-bottom: 2px solid var(--border-color);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.project-link:hover {
+    background-color: var(--border-color);
+    color: #ffffff;
+}
+
+/* Mentorship Special Highlight Styling */
+.framework-callout {
+    border-left: 8px solid var(--border-color);
+    background-color: #ffffff;
+}
+
+/* Clickable Certificate Link Frame Handling */
+.cert-link-wrapper {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cert-image-frame {
+    width: 100%;
+    border: var(--border-thick) solid var(--border-color);
+    background-color: var(--bg-color);
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.cert-image-frame:hover {
+    box-shadow: 4px 4px 0px var(--border-color);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.cert-img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Responsive adjustments */
