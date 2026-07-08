@@ -213,7 +213,7 @@ p {
     margin: 15px 0;
 }
 
-/* --- NEW COMPONENT SPECIFICS --- */
+/* --- COMPONENT SPECIFICS --- */
 
 /* Hero Profile Image Setup */
 .profile-img-container {
@@ -275,6 +275,39 @@ p {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* --- MEDIA LAB RESPONSIVE SYSTEM --- */
+
+/* Flexible Local Video Container Formatting */
+.video-container video {
+    border: 2px solid var(--border-color);
+    width: 100%;
+    background-color: var(--border-color);
+}
+
+/* Custom Responsive Iframe Wrapper for YouTube (16:9 Aspect Ratio) */
+.responsive-iframe-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Standard video aspect ratio ratio mapping */
+    height: 0;
+    overflow: hidden;
+    border: var(--border-thick) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+    margin-top: 15px;
+}
+
+.responsive-iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style optimization for clean standard layout integration */
+audio {
+    outline: none;
 }
 
 /* Responsive adjustments */
